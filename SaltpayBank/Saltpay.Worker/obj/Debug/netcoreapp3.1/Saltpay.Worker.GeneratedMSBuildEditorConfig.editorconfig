@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Saltpay.Worker
+build_property.ProjectDir = c:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\

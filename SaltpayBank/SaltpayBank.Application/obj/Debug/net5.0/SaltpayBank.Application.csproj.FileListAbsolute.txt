@@ -1,0 +1,17 @@
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\bin\Debug\net5.0\SaltpayBank.Application.deps.json
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\bin\Debug\net5.0\SaltpayBank.Application.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\bin\Debug\net5.0\ref\SaltpayBank.Application.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\bin\Debug\net5.0\SaltpayBank.Application.pdb
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\bin\Debug\net5.0\SaltpayBank.Domain.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\bin\Debug\net5.0\SaltpayBank.Seedwork.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\bin\Debug\net5.0\SaltpayBank.Domain.pdb
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\bin\Debug\net5.0\SaltpayBank.Seedwork.pdb
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\obj\Debug\net5.0\SaltpayBank.Application.csprojAssemblyReference.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\obj\Debug\net5.0\SaltpayBank.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\obj\Debug\net5.0\SaltpayBank.Application.AssemblyInfoInputs.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\obj\Debug\net5.0\SaltpayBank.Application.AssemblyInfo.cs
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\obj\Debug\net5.0\SaltpayBank.Application.csproj.CoreCompileInputs.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\obj\Debug\net5.0\SaltpayBank.Application.csproj.CopyComplete
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\obj\Debug\net5.0\SaltpayBank.Application.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\obj\Debug\net5.0\ref\SaltpayBank.Application.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Application\obj\Debug\net5.0\SaltpayBank.Application.pdb

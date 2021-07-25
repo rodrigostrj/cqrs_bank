@@ -1,0 +1,12 @@
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\netcoreapp3.1\Saltpay.Worker.exe
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\netcoreapp3.1\Saltpay.Worker.deps.json
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\netcoreapp3.1\Saltpay.Worker.runtimeconfig.json
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\netcoreapp3.1\Saltpay.Worker.runtimeconfig.dev.json
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\netcoreapp3.1\Saltpay.Worker.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\netcoreapp3.1\Saltpay.Worker.pdb
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\netcoreapp3.1\Saltpay.Worker.AssemblyInfoInputs.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\netcoreapp3.1\Saltpay.Worker.AssemblyInfo.cs
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\netcoreapp3.1\Saltpay.Worker.csproj.CoreCompileInputs.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\netcoreapp3.1\Saltpay.Worker.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\netcoreapp3.1\Saltpay.Worker.pdb
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\netcoreapp3.1\Saltpay.Worker.genruntimeconfig.cache

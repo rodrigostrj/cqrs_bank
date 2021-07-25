@@ -1,0 +1,4 @@
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Seedwork\obj\Debug\netcoreapp3.1\SaltpayBank.Seedwork.csprojAssemblyReference.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Seedwork\obj\Debug\netcoreapp3.1\SaltpayBank.Seedwork.AssemblyInfoInputs.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Seedwork\obj\Debug\netcoreapp3.1\SaltpayBank.Seedwork.AssemblyInfo.cs
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Seedwork\obj\Debug\netcoreapp3.1\SaltpayBank.Seedwork.csproj.CoreCompileInputs.cache

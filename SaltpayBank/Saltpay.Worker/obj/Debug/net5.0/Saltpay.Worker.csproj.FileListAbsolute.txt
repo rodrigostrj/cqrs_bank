@@ -1,0 +1,16 @@
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\net5.0\Saltpay.Worker.exe
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\net5.0\Saltpay.Worker.deps.json
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\net5.0\Saltpay.Worker.runtimeconfig.json
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\net5.0\Saltpay.Worker.runtimeconfig.dev.json
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\net5.0\Saltpay.Worker.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\net5.0\ref\Saltpay.Worker.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\bin\Debug\net5.0\Saltpay.Worker.pdb
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\net5.0\Saltpay.Worker.csprojAssemblyReference.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\net5.0\Saltpay.Worker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\net5.0\Saltpay.Worker.AssemblyInfoInputs.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\net5.0\Saltpay.Worker.AssemblyInfo.cs
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\net5.0\Saltpay.Worker.csproj.CoreCompileInputs.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\net5.0\Saltpay.Worker.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\net5.0\ref\Saltpay.Worker.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\net5.0\Saltpay.Worker.pdb
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\Saltpay.Worker\obj\Debug\net5.0\Saltpay.Worker.genruntimeconfig.cache

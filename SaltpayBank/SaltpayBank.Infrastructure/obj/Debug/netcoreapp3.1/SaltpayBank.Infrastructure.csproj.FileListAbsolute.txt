@@ -1,0 +1,9 @@
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\bin\Debug\netcoreapp3.1\SaltpayBank.Infrastructure.deps.json
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\bin\Debug\netcoreapp3.1\SaltpayBank.Infrastructure.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\bin\Debug\netcoreapp3.1\SaltpayBank.Infrastructure.pdb
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\obj\Debug\netcoreapp3.1\SaltpayBank.Infrastructure.csprojAssemblyReference.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\obj\Debug\netcoreapp3.1\SaltpayBank.Infrastructure.AssemblyInfoInputs.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\obj\Debug\netcoreapp3.1\SaltpayBank.Infrastructure.AssemblyInfo.cs
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\obj\Debug\netcoreapp3.1\SaltpayBank.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\obj\Debug\netcoreapp3.1\SaltpayBank.Infrastructure.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\obj\Debug\netcoreapp3.1\SaltpayBank.Infrastructure.pdb

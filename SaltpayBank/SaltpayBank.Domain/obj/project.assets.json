@@ -1,0 +1,127 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "MediatR/9.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        }
+      },
+      "SaltpayBank.Seedwork/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MediatR": "9.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SaltpayBank.Seedwork.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SaltpayBank.Seedwork.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MediatR/9.0.0": {
+      "sha512": "8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
+      "type": "package",
+      "path": "mediatr/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/net461/MediatR.dll",
+        "lib/net461/MediatR.xml",
+        "lib/netstandard2.0/MediatR.dll",
+        "lib/netstandard2.0/MediatR.xml",
+        "lib/netstandard2.1/MediatR.dll",
+        "lib/netstandard2.1/MediatR.xml",
+        "mediatr.9.0.0.nupkg.sha512",
+        "mediatr.nuspec"
+      ]
+    },
+    "SaltpayBank.Seedwork/1.0.0": {
+      "type": "project",
+      "path": "../SaltpayBank.Seedwork/SaltpayBank.Seedwork.csproj",
+      "msbuildProject": "../SaltpayBank.Seedwork/SaltpayBank.Seedwork.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "SaltpayBank.Seedwork >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Rodrigo.Souto\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Temp\\Test\\saltpay-eng-c-banking-api-ijsnfn\\SaltpayBank\\SaltpayBank.Domain\\SaltpayBank.Domain.csproj",
+      "projectName": "SaltpayBank.Domain",
+      "projectPath": "C:\\Temp\\Test\\saltpay-eng-c-banking-api-ijsnfn\\SaltpayBank\\SaltpayBank.Domain\\SaltpayBank.Domain.csproj",
+      "packagesPath": "C:\\Users\\Rodrigo.Souto\\.nuget\\packages\\",
+      "outputPath": "C:\\Temp\\Test\\saltpay-eng-c-banking-api-ijsnfn\\SaltpayBank\\SaltpayBank.Domain\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Rodrigo.Souto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://basecone-team.pkgs.visualstudio.com/Basecone/_packaging/basecone-application-dependencies/nuget/v3/index.json": {},
+        "https://basecone-team.pkgs.visualstudio.com/_packaging/basecone-backend-components/nuget/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Temp\\Test\\saltpay-eng-c-banking-api-ijsnfn\\SaltpayBank\\SaltpayBank.Seedwork\\SaltpayBank.Seedwork.csproj": {
+              "projectPath": "C:\\Temp\\Test\\saltpay-eng-c-banking-api-ijsnfn\\SaltpayBank\\SaltpayBank.Seedwork\\SaltpayBank.Seedwork.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

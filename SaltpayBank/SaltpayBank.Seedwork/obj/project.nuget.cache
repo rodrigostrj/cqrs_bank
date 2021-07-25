@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5R//Ds8igU5nxdFDsgnIdKWYX8sTWbi1YYd08eXHzCN7nB27MRl4aKe8URuGKQ5p95NYHB/Ymlpom/vavj7bgw==",
+  "success": true,
+  "projectFilePath": "C:\\Temp\\Test\\saltpay-eng-c-banking-api-ijsnfn\\SaltpayBank\\SaltpayBank.Seedwork\\SaltpayBank.Seedwork.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rodrigo.Souto\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

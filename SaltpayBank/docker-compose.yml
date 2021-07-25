@@ -1,0 +1,65 @@
+version: '3'
+
+volumes:
+   dbdata:
+
+services:
+    db:
+        image: mcmoe/mssqldocker:v2017.CU12.1
+        environment:
+          ACCEPT_EULA: Y
+          SA_PASSWORD: 1p@sswordY
+          MSSQL_DB: saltpaybank_db
+          MSSQL_USER: saltpaybank_db_app
+          MSSQL_PASSWORD: 1p@sswordY
+        ports:
+            - "1433:1433"
+        networks:
+         - saltpaybank            
+
+    saltpaybank.api:
+        depends_on:
+           - db
+        image: saltpaybank.api
+        build:
+          context: .
+          dockerfile: SaltpayBank.Api/Dockerfile
+        ports:
+          - "8089:80"
+        environment:
+          - ASPNETCORE_ENVIRONMENT=Development
+        networks:
+         - saltpaybank            
+    
+    elasticsearch:
+        container_name: elasticsearch
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
+        ports:
+         - 9200:9200
+        volumes:
+         - elasticsearch-data:/usr/share/elasticsearch/data
+        environment:
+         - xpack.monitoring.enabled=true
+         - xpack.watcher.enabled=false
+         - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+         - discovery.type=single-node
+        networks:
+         - saltpaybank   
+   
+    kibana:
+        container_name: kibana
+        image: docker.elastic.co/kibana/kibana:7.9.2
+        ports:
+         - 5601:5601
+        depends_on:
+         - elasticsearch
+        environment:
+         - ELASTICSEARCH_URL=http://localhost:9200
+        networks:
+         - saltpaybank   
+         
+networks:
+  saltpaybank:
+    driver: bridge
+volumes:
+  elasticsearch-data:    

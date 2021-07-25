@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Saltpay.Worker/1.0.0": {
+        "runtime": {
+          "Saltpay.Worker.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Saltpay.Worker/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
