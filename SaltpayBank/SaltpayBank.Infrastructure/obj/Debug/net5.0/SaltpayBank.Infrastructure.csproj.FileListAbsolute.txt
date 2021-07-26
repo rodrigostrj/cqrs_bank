@@ -13,3 +13,5 @@ C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastruc
 C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\obj\Debug\net5.0\SaltpayBank.Infrastructure.dll
 C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\obj\Debug\net5.0\ref\SaltpayBank.Infrastructure.dll
 C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\obj\Debug\net5.0\SaltpayBank.Infrastructure.pdb
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\bin\Debug\net5.0\SaltpayBank.Domain.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Infrastructure\bin\Debug\net5.0\SaltpayBank.Domain.pdb

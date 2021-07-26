@@ -90,3 +90,13 @@ C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\De
 C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\SaltpayBank.Infrastructure.pdb
 C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\Automatonymous.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\GreenPipes.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\MassTransit.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\MassTransit.AspNetCoreIntegration.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\MassTransit.ExtensionsDependencyInjectionIntegration.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\MassTransit.RabbitMqTransport.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\NewId.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Api\bin\Debug\net5.0\RabbitMQ.Client.dll

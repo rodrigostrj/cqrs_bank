@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SaltpayBank.Domain.AccountAggregate;
+using System.Data.Common;
 
 namespace SaltpayBank.Infrastructure.Data
 {
@@ -12,5 +9,8 @@ namespace SaltpayBank.Infrastructure.Data
         public EFContext(DbContextOptions<EFContext> options) : base(options)
         {
         }
+
+        public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
     }
 }

@@ -12,6 +12,11 @@ using SaltpayBank.Seedwork;
 using MediatR;
 using SaltpayBank.Api.Mappers;
 using SaltpayBank.Application.Mappers;
+using MassTransit;
+using SaltpayBank.Infrastructure.EventBus;
+using System;
+using GreenPipes;
+using SaltpayBank.Seedwork.EventBus;
 
 namespace SaltpayBank.Api
 {
@@ -31,6 +36,16 @@ namespace SaltpayBank.Api
             services.AddControllers();
 
             // TODO: Improve DI
+
+            services.AddMassTransit(cc =>
+            {
+                cc.AddBus(context => BuildRabbitMqBus(context));
+            });
+            services.AddMassTransitHostedService();
+            //EventPublisher
+            services
+                .AddSingleton<IEventPublisher, EventPublisher>();
+
             services
                 .AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -68,6 +83,21 @@ namespace SaltpayBank.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+        }
+
+        private static IBusControl BuildRabbitMqBus(IBusRegistrationContext context)
+        {
+            return Bus.Factory.CreateUsingRabbitMq(cfg =>
+            {
+                var rabbitmqOptions = context.GetService<IConfiguration>().GetSection(RabbitMqOptions.RabbitMqOptionsKey).Get<RabbitMqOptions>();
+
+                cfg.Host(new Uri(rabbitmqOptions.QueueHost), configurator =>
+                {
+                    configurator.Username(rabbitmqOptions.QueueUsername);
+                    configurator.Password(rabbitmqOptions.QueuePassword);
+                    configurator.Heartbeat(rabbitmqOptions.QueueHeartbeat);
+                });
             });
         }
     }
