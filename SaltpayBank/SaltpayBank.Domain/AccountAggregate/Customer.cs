@@ -9,6 +9,6 @@ namespace SaltpayBank.Domain.AccountAggregate
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public IEnumerator<Account> AccountList { get; set; }
+        public IReadOnlyList<Account> AccountList { get; set; }
     }
 }

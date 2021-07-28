@@ -8,11 +8,5 @@ namespace SaltpayBank.Domain.AccountAggregate.ValueObjects
     {
         public Currency Currency { get; set; }
         public decimal Amount { get; set; }
-
-        public Money(decimal amount, Currency currency)
-        {
-            this.Amount = amount;
-            this.Currency = currency;
-        }
     }
 }

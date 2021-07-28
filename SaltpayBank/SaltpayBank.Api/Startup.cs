@@ -17,6 +17,7 @@ using SaltpayBank.Infrastructure.EventBus;
 using System;
 using GreenPipes;
 using SaltpayBank.Seedwork.EventBus;
+using SaltpayBank.Domain.AccountAggregate.Services;
 
 namespace SaltpayBank.Api
 {
@@ -49,13 +50,16 @@ namespace SaltpayBank.Api
             services
                 .AddScoped<IUnitOfWork, UnitOfWork>();
 
+            // Domains Services 
+            services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<ITransferService, TransferService>();
+            // Event Handlers
+            services.AddMediatR(cfg => { }, typeof(AddNewBankAccountToCustomerCommandHandler).Assembly);
+
             services.AddDbContext<EFContext>(options =>
                      options.UseSqlServer(Configuration.GetConnectionString("SaltpayBankConnectionString")));
             services
                 .AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
-
-            services.AddMediatR(cfg => { }, typeof(AddNewBankAccountToCustomerCommandHandler).Assembly);
-
 
             services.AddAutoMapper(typeof(ApiProfile), typeof(ApplicationProfile));
             // #############################################################

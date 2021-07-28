@@ -4,10 +4,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SaltpayBank.Api.ApiContracts.Requests;
+using SaltpayBank.Api.ApiContracts.Responses;
 using SaltpayBank.Application.Commands;
+using SaltpayBank.Application.Queries;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SaltpayBank.Api.Controllers
@@ -49,47 +50,58 @@ namespace SaltpayBank.Api.Controllers
 
         // - Transfer amounts between any two accounts, including those owned by different customers.
         [HttpPost("{accountId}/transfer")]
-        public IActionResult TransferAmount(object transfer)
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        public async Task<ActionResult> TransferAmount(AddNewAccountTransferRequest addNewAccountTransferRequest)
         {
             try
             {
-                throw new NotFiniteNumberException();
+                var command = new AddNewAccountTransferCommand(
+                    addNewAccountTransferRequest.AccountOriginId,
+                    addNewAccountTransferRequest.AccountDestinyId,
+                    addNewAccountTransferRequest.Amount);
+                var response = await _mediator.Send(command);
+                return new AcceptedResult();
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error creating transfer");
-                throw ex;
+                _logger.LogError(ex, "Error creating Transfer");
+                throw;
             }
         }
 
         // - Retrieve balances for a given account.
         [HttpGet("{accountId}/balance")]
-        public IEnumerable<object> GetBalances(Guid accountId)
+        public async Task<ActionResult<Balance>> GetBalances(int accountId)
         {
             try
             {
-                throw new NotFiniteNumberException();
+                var command = new GetBalanceByAccountQuery(accountId);
+                var response = await _mediator.Send(command);
+                var balance = _mapper.Map<Balance>(response);
+                return Ok(balance);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error getting ballence by account");
-                throw ex;
+                _logger.LogError(ex, "Error the balance by account");
+                throw;
             }
         }
 
-
         // - Retrieve transfer history for a given account.
         [HttpGet("{accountId}/transfer-history")]
-        public IEnumerable<object> GetTransferHistory()
+        public async Task<ActionResult<List<Transfer>>> GetTransferHistoryAsync(int accountId)
         {
             try
             {
-                throw new NotFiniteNumberException();
+                var command = new GetTransferListByAccountQuery(accountId);
+                var response = await _mediator.Send(command);
+                var transferList = _mapper.Map<List<Transfer>>(response);
+                return Ok(transferList);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error getting transfer history by account");
-                throw ex;
+                _logger.LogError(ex, "Error the balance by account");
+                throw;
             }
         }
     }

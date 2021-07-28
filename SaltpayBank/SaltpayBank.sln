@@ -19,9 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SeedWork", "SeedWork", "{03
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaltpayBank.Seedwork", "SaltpayBank.Seedwork\SaltpayBank.Seedwork.csproj", "{18AD4679-42AD-44CD-AC07-BC6272E9F937}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaltpayBank.Infrastructure", "SaltpayBank.Infrastructure\SaltpayBank.Infrastructure.csproj", "{32C762F8-64CC-4FBF-BB5C-BB6D9B0C24B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaltpayBank.Infrastructure", "SaltpayBank.Infrastructure\SaltpayBank.Infrastructure.csproj", "{32C762F8-64CC-4FBF-BB5C-BB6D9B0C24B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaltpayBank.Application", "SaltpayBank.Application\SaltpayBank.Application.csproj", "{B471B85B-3B3A-4C1D-A759-A0E54B654FF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaltpayBank.Application", "SaltpayBank.Application\SaltpayBank.Application.csproj", "{B471B85B-3B3A-4C1D-A759-A0E54B654FF6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaltpayBank.Migrations", "SaltpayBank.Migrations\SaltpayBank.Migrations.csproj", "{8DD093E5-FD34-4E53-B403-7493BB445012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaltpayBank.Domain.UnitTests", "SaltpayBank.Domain.UnitTests\SaltpayBank.Domain.UnitTests.csproj", "{4991F318-9FA5-4A75-B81A-D6330961F961}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,14 @@ Global
 		{B471B85B-3B3A-4C1D-A759-A0E54B654FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B471B85B-3B3A-4C1D-A759-A0E54B654FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B471B85B-3B3A-4C1D-A759-A0E54B654FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DD093E5-FD34-4E53-B403-7493BB445012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DD093E5-FD34-4E53-B403-7493BB445012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DD093E5-FD34-4E53-B403-7493BB445012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DD093E5-FD34-4E53-B403-7493BB445012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4991F318-9FA5-4A75-B81A-D6330961F961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4991F318-9FA5-4A75-B81A-D6330961F961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4991F318-9FA5-4A75-B81A-D6330961F961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4991F318-9FA5-4A75-B81A-D6330961F961}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +76,8 @@ Global
 		{18AD4679-42AD-44CD-AC07-BC6272E9F937} = {038C906D-A4AC-4866-8EAC-EC086B58E104}
 		{32C762F8-64CC-4FBF-BB5C-BB6D9B0C24B1} = {F78A043C-678D-475C-AC92-6BE15A0826C5}
 		{B471B85B-3B3A-4C1D-A759-A0E54B654FF6} = {457DA80A-1FD0-494E-A62E-ECE13CB12EA6}
+		{8DD093E5-FD34-4E53-B403-7493BB445012} = {531E49EF-4248-4B21-B41A-A9FBD1019759}
+		{4991F318-9FA5-4A75-B81A-D6330961F961} = {457DA80A-1FD0-494E-A62E-ECE13CB12EA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF24BBEC-71E6-4E36-BCB8-AC878C960593}

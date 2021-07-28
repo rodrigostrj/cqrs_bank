@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Saltpay.Worker.Ioc;
+using SaltpayBank.Domain.AccountAggregate.Services;
 using SaltpayBank.Infrastructure.Data;
 using SaltpayBank.Infrastructure.Data.Repositories;
 using SaltpayBank.Infrastructure.EventBus;
@@ -56,6 +57,9 @@ namespace Saltpay.Worker
             .ConfigureServices((hostContext, services) =>
             {
                 services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+                services.AddScoped<IAccountService, AccountService>();
+                services.AddScoped<ITransferService, TransferService>();
 
                 services.SetupBusIoc();
 

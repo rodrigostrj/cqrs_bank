@@ -46,6 +46,7 @@ namespace Saltpay.Worker.Ioc
                     {
                         configurator.PrefetchCount = rabbitmqOptions.PrefetchCount;
 
+                        // ######### NewAccountMessageConsumer
                         configurator.ConfigureConsumer<NewAccountMessageConsumer>(context, cf =>
                         {
                             cf.UseMessageRetry(retry =>
@@ -54,8 +55,18 @@ namespace Saltpay.Worker.Ioc
                             });
 
                         });
-
                         configurator.Consumer<NewAccountMessageConsumer>(context);
+
+                        // ######### NewAccountTransferMessageConsume
+                        configurator.ConfigureConsumer<NewAccountTransferMessageConsumer>(context, cf =>
+                        {
+                            cf.UseMessageRetry(retry =>
+                            {
+                                retry.Incremental(5, TimeSpan.FromSeconds(10), TimeSpan.FromSeconds(10));
+                            });
+
+                        });
+                        configurator.Consumer<NewAccountTransferMessageConsumer>(context);
                     });
 
             });

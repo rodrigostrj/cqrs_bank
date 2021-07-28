@@ -12,28 +12,30 @@ using System.Threading.Tasks;
 
 namespace SaltpayBank.Application.Commands
 {
-    public class AddNewBankAccountToCustomerCommandHandler
-        : IRequestHandler<AddNewBankAccountToCustomerCommand, bool>
+    public class AddNewAccountTransferCommandHandler
+        : IRequestHandler<AddNewAccountTransferCommand, bool>
     {
         public IMediator Mediator { get; }
         public IMapper Mapper { get; }
         public IEventPublisher EventPublisher { get; }
 
-        public AddNewBankAccountToCustomerCommandHandler(IMediator mediator, IMapper mapper, IEventPublisher eventPublisher)
+        public AddNewAccountTransferCommandHandler(IMediator mediator, IMapper mapper, IEventPublisher eventPublisher)
         {
             this.Mediator = mediator;
             this.Mapper = mapper;
             this.EventPublisher = eventPublisher;
         }
 
-        public Task<bool> Handle(AddNewBankAccountToCustomerCommand request, CancellationToken cancellationToken)
+        public Task<bool> Handle(AddNewAccountTransferCommand request, CancellationToken cancellationToken)
         {
             EventPublisher.PublishAsync(
-                new NewAccountMessage { 
-                    Amount = request.Amount, 
-                    CustomerId = request.CustomerId });
+                new NewAccountTransferMessage { 
+                    AccountOriginId = request.AccountOriginId,
+                    AccountDestitnyId = request.AccountDestitnyId,
+                    Amount = request.Amount 
+                });
 
-            return Task.Factory.StartNew(()=> true);
+            return Task.Factory.StartNew(() => true);
         }
     }
 }

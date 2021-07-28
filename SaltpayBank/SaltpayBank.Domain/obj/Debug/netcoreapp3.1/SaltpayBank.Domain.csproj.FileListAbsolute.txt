@@ -1,8 +1,0 @@
-C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Domain\obj\Debug\netcoreapp3.1\SaltpayBank.Domain.AssemblyInfoInputs.cache
-C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Domain\obj\Debug\netcoreapp3.1\SaltpayBank.Domain.AssemblyInfo.cs
-C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Domain\obj\Debug\netcoreapp3.1\SaltpayBank.Domain.csproj.CoreCompileInputs.cache
-C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Domain\bin\Debug\netcoreapp3.1\SaltpayBank.Domain.deps.json
-C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Domain\bin\Debug\netcoreapp3.1\SaltpayBank.Domain.dll
-C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Domain\bin\Debug\netcoreapp3.1\SaltpayBank.Domain.pdb
-C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Domain\obj\Debug\netcoreapp3.1\SaltpayBank.Domain.dll
-C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Domain\obj\Debug\netcoreapp3.1\SaltpayBank.Domain.pdb
