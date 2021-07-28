@@ -12,7 +12,7 @@ namespace SaltpayBank.Api.Mappers
     {
         public ApiProfile()
         {
-            CreateMap<AccountDTO, Account>();
+            CreateMap<AccountDTO, Balance>(); //TODO: Might be imporved
             CreateMap<CustomerDTO, Customer>();
         }
     }
