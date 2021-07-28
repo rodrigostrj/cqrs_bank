@@ -18,6 +18,9 @@ using System;
 using GreenPipes;
 using SaltpayBank.Seedwork.EventBus;
 using SaltpayBank.Domain.AccountAggregate.Services;
+using SaltpayBank.Seedwork.Notifications;
+using SaltpayBank.Api.Filters;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SaltpayBank.Api
 {
@@ -53,8 +56,10 @@ namespace SaltpayBank.Api
             // Domains Services 
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<ITransferService, TransferService>();
+
             // Event Handlers
             services.AddMediatR(cfg => { }, typeof(AddNewBankAccountToCustomerCommandHandler).Assembly);
+            services.AddScoped<NotificationContext>();
 
             services.AddDbContext<EFContext>(options =>
                      options.UseSqlServer(Configuration.GetConnectionString("SaltpayBankConnectionString")));
@@ -68,6 +73,9 @@ namespace SaltpayBank.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SaltpayBank.Api", Version = "v1" });
             });
+
+            services.AddMvc(options => options.Filters.Add<NotificationFilter>())
+                    .SetCompatibilityVersion(CompatibilityVersion.Latest);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

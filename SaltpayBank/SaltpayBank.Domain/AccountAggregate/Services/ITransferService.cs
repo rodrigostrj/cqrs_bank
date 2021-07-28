@@ -11,6 +11,6 @@ namespace SaltpayBank.Domain.AccountAggregate.Services
         // Trasfer 
         void AccountAmountTransfer(Transfer transfer);
 
-        IEnumerable<Transfer> GetTransfers(Customer customer);
+        IEnumerable<Transfer> GetTransfers(Account customer);
     }
 }

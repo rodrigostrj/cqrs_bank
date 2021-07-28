@@ -13,7 +13,7 @@ namespace SaltpayBank.Domain.AccountAggregate.Services
             // throw new NotImplementedException();
         }
 
-        public IEnumerable<Transfer> GetTransfers(Customer customer)
+        public IEnumerable<Transfer> GetTransfers(Account customer)
         {
             return null;
         }

@@ -2,7 +2,6 @@ C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Seedwork\b
 C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Seedwork\bin\Debug\net5.0\SaltpayBank.Seedwork.dll
 C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Seedwork\bin\Debug\net5.0\ref\SaltpayBank.Seedwork.dll
 C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Seedwork\bin\Debug\net5.0\SaltpayBank.Seedwork.pdb
-C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Seedwork\obj\Debug\net5.0\SaltpayBank.Seedwork.csprojAssemblyReference.cache
 C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Seedwork\obj\Debug\net5.0\SaltpayBank.Seedwork.GeneratedMSBuildEditorConfig.editorconfig
 C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Seedwork\obj\Debug\net5.0\SaltpayBank.Seedwork.AssemblyInfoInputs.cache
 C:\Temp\Test\saltpay-eng-c-banking-api-ijsnfn\SaltpayBank\SaltpayBank.Seedwork\obj\Debug\net5.0\SaltpayBank.Seedwork.AssemblyInfo.cs

@@ -13,7 +13,7 @@ namespace SaltpayBank.Domain.AccountAggregate.Services
             //throw new NotImplementedException();
         }
 
-        public Account GetAccount(Customer customer)
+        public Account GetAccount(Account customer)
         {
             //throw new NotImplementedException();
             return null;

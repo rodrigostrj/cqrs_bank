@@ -8,7 +8,7 @@ namespace SaltpayBank.Application.Mappers
     {
         public ApplicationProfile()
         {
-            CreateMap<Customer, CustomerDTO>();
+            CreateMap<Account, CustomerDTO>();
             CreateMap<Account, AccountDTO>();
         }
     }

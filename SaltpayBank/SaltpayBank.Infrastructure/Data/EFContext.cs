@@ -39,7 +39,7 @@ namespace SaltpayBank.Infrastructure.Data
 
         private static void CreateInitialData(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Customer>().HasData(
+            modelBuilder.Entity<Account>().HasData(
                     new Customer { Id = 1, Name = "Arisha Barron" },
                     new Customer { Id = 2, Name = "Branden Gibson" },
                     new Customer { Id = 3, Name = "Rhonda Church" },

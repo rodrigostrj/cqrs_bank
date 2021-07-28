@@ -11,7 +11,7 @@ namespace SaltpayBank.Infrastructure.Data.Mappers
             builder.ToTable("Customers");
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Name).IsRequired().HasMaxLength(255);
-            builder.HasMany(c => c.AccountList).WithOne(c => c.Customer);
+            //builder.HasMany(c => c.AccountList).WithOne(c => c.Customer);
         }
     }
 }

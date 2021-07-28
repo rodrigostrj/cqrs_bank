@@ -2,7 +2,10 @@
 using MediatR;
 using SaltpayBank.Application.Events;
 using SaltpayBank.Application.Models;
+using SaltpayBank.Domain.AccountAggregate;
+using SaltpayBank.Seedwork;
 using SaltpayBank.Seedwork.EventBus;
+using SaltpayBank.Seedwork.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,25 +18,52 @@ namespace SaltpayBank.Application.Commands
     public class AddNewBankAccountToCustomerCommandHandler
         : IRequestHandler<AddNewBankAccountToCustomerCommand, bool>
     {
-        public IMediator Mediator { get; }
-        public IMapper Mapper { get; }
-        public IEventPublisher EventPublisher { get; }
+        private readonly IMediator _mediator;
+        private readonly IMapper _mapper;
+        private readonly IEventPublisher _eventPublisher;
+        private readonly NotificationContext _notificationContext;
+        private readonly IUnitOfWork _unitOfWork;
+        //private readonly IAsyncRepository<Account> _repository;
 
-        public AddNewBankAccountToCustomerCommandHandler(IMediator mediator, IMapper mapper, IEventPublisher eventPublisher)
+        public AddNewBankAccountToCustomerCommandHandler(
+            IMediator mediator, 
+            IMapper mapper, 
+            IEventPublisher eventPublisher,
+            NotificationContext notificationContext,
+            IUnitOfWork unitOfWork)
         {
-            this.Mediator = mediator;
-            this.Mapper = mapper;
-            this.EventPublisher = eventPublisher;
+            _mediator = mediator;
+            _mapper = mapper;
+            _eventPublisher = eventPublisher;
+            _notificationContext = notificationContext;
+            _unitOfWork = unitOfWork;
+            //_repository = _unitOfWork.AsyncRepository<Account>();
         }
 
-        public Task<bool> Handle(AddNewBankAccountToCustomerCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(AddNewBankAccountToCustomerCommand request, CancellationToken cancellationToken)
         {
-            EventPublisher.PublishAsync(
-                new NewAccountMessage { 
+            //var customer = await _repository.GetAsync(x => x.Id == request.CustomerId);
+            var customer = new Customer { Id = 1, Name = "Fulano" };
+
+            var NewAccountToValidate = new Account
+            {
+                Amount = request.Amount,
+                Customer = customer,
+            };
+
+            NewAccountToValidate.Validate();
+            if (NewAccountToValidate.Invalid)
+            {
+                _notificationContext.AddNotifications(NewAccountToValidate.ValidationResult);
+                return false; 
+            }
+
+            await _eventPublisher.PublishAsync(
+                new NewAccountMessage {
                     Amount = request.Amount, 
                     CustomerId = request.CustomerId });
 
-            return Task.Factory.StartNew(()=> true);
+            return true;
         }
     }
 }

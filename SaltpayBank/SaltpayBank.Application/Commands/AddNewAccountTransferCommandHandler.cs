@@ -2,7 +2,10 @@
 using MediatR;
 using SaltpayBank.Application.Events;
 using SaltpayBank.Application.Models;
+using SaltpayBank.Domain.AccountAggregate;
+using SaltpayBank.Seedwork;
 using SaltpayBank.Seedwork.EventBus;
+using SaltpayBank.Seedwork.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,27 +18,55 @@ namespace SaltpayBank.Application.Commands
     public class AddNewAccountTransferCommandHandler
         : IRequestHandler<AddNewAccountTransferCommand, bool>
     {
-        public IMediator Mediator { get; }
-        public IMapper Mapper { get; }
-        public IEventPublisher EventPublisher { get; }
+        private readonly IMediator _mediator;
+        private readonly IMapper _mapper;
+        private readonly IEventPublisher _eventPublisher;
+        private readonly NotificationContext _notificationContext;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IAsyncRepository<Account> _repository;
 
-        public AddNewAccountTransferCommandHandler(IMediator mediator, IMapper mapper, IEventPublisher eventPublisher)
+        public AddNewAccountTransferCommandHandler(
+            IMediator mediator, 
+            IMapper mapper, 
+            IEventPublisher eventPublisher,
+            NotificationContext notificationContext,
+            IUnitOfWork unitOfWork)
         {
-            this.Mediator = mediator;
-            this.Mapper = mapper;
-            this.EventPublisher = eventPublisher;
+            _mediator = mediator;
+            _mapper = mapper;
+            _eventPublisher = eventPublisher;
+            _notificationContext = notificationContext;
+            _unitOfWork = unitOfWork;
+            _repository = _unitOfWork.AsyncRepository<Account>();
         }
 
-        public Task<bool> Handle(AddNewAccountTransferCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(AddNewAccountTransferCommand request, CancellationToken cancellationToken)
         {
-            EventPublisher.PublishAsync(
+            var originAccount = await _repository.GetAsync(x => x.Id == request.AccountOriginId);
+            var destinyAccount = await _repository.GetAsync(x => x.Id == request.AccountDestitnyId);
+
+            var NewTransferToValidate = new Transfer
+            {
+                OriginAccount = originAccount,
+                DestinyAccount = destinyAccount,
+                DateTransfer = DateTime.Now,
+                AmountToTransfer = request.Amount
+            };
+
+            if (NewTransferToValidate.Invalid)
+            {
+                _notificationContext.AddNotifications(NewTransferToValidate.ValidationResult);
+                return false;
+            }
+
+            await _eventPublisher.PublishAsync(
                 new NewAccountTransferMessage { 
                     AccountOriginId = request.AccountOriginId,
                     AccountDestitnyId = request.AccountDestitnyId,
                     Amount = request.Amount 
                 });
 
-            return Task.Factory.StartNew(() => true);
+            return true;
         }
     }
 }
