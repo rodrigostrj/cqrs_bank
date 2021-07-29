@@ -62,7 +62,7 @@ namespace SaltpayBank.Api
             services.AddScoped<NotificationContext>();
 
             // Sample Data 
-            services.AddScoped<SampleDataHelper>();
+            services.AddTransient<SampleDataHelper>();
 
             // Repositories
             services.AddScoped<IUnitOfWork, UnitOfWork>();

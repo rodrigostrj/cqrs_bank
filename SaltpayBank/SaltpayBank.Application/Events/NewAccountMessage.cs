@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SaltpayBank.Domain.AccountAggregate;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace SaltpayBank.Application.Events
 {
     public class NewAccountMessage
     {
-        public int CustomerId { get; set; }
+        public Customer Customer { get; set; }
         public decimal Amount { get; set; }
     }
 }

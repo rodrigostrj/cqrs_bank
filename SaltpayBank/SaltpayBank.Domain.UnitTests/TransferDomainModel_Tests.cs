@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 namespace SaltpayBank.Domain.UnitTests
 {
     [TestClass]
-    public class Transfer_Tests
+    public class TransferDomainModel_Tests
     {
         private Account _originAccount;
         private Account _destinyAccount;
         private Transfer _transfer;
 
-        public Transfer_Tests()
+        public TransferDomainModel_Tests()
         {
             _originAccount = new Account { Id = 1, Amount = 11 };
             _destinyAccount = new Account { Id = 2, Amount = 5 };

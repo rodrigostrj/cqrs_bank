@@ -5,11 +5,11 @@ using System.Collections.Generic;
 namespace SaltpayBank.Domain.UnitTests
 {
     [TestClass]
-    public class Account_Tests
+    public class AccountDomainModel_Tests
     {
         private Account _account;
 
-        public Account_Tests()
+        public AccountDomainModel_Tests()
         {
             var account = _account;
 
@@ -52,6 +52,7 @@ namespace SaltpayBank.Domain.UnitTests
         {
             var account = _account;
             account.Customer = null;
+            account.Amount = 0;
 
             // Act
             account.Validate();

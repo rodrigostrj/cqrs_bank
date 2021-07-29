@@ -3,6 +3,7 @@ using MediatR;
 using SaltpayBank.Application.Events;
 using SaltpayBank.Application.Models;
 using SaltpayBank.Domain.AccountAggregate;
+using SaltpayBank.Domain.AccountAggregate.RepositoryContracts;
 using SaltpayBank.Seedwork;
 using SaltpayBank.Seedwork.EventBus;
 using SaltpayBank.Seedwork.Notifications;
@@ -21,28 +22,29 @@ namespace SaltpayBank.Application.Commands
         private readonly IMediator _mediator;
         private readonly IEventPublisher _eventPublisher;
         private readonly NotificationContext _notificationContext;
-
+        private readonly IAccountRepository _accountRepository;
 
         public AddNewAccountTransferCommandHandler(
             IMediator mediator, 
             IEventPublisher eventPublisher,
-            NotificationContext notificationContext)
+            NotificationContext notificationContext,
+            IAccountRepository accountRepository)
         {
             _mediator = mediator;
             _eventPublisher = eventPublisher;
             _notificationContext = notificationContext;
+            _accountRepository = accountRepository;
         }
 
         public async Task<bool> Handle(AddNewAccountTransferCommand request, CancellationToken cancellationToken)
         {
-            var originAccount = new Account { }; //= await _repository.GetAsync(x => x.Id == request.AccountOriginId);
-            var destinyAccount = new Account { };  //= await _repository.GetAsync(x => x.Id == request.AccountDestitnyId);
+            var originAccount = _accountRepository.Get(request.AccountOriginId);
+            var destinyAccount = _accountRepository.Get(request.AccountDestitnyId);
 
             var NewTransferToValidate = new Transfer
             {
                 OriginAccount = originAccount,
                 DestinyAccount = destinyAccount,
-                DateTransfer = DateTime.Now,
                 AmountToTransfer = request.Amount
             };
 
@@ -55,8 +57,8 @@ namespace SaltpayBank.Application.Commands
 
             await _eventPublisher.PublishAsync(
                 new NewAccountTransferMessage { 
-                    AccountOriginId = request.AccountOriginId,
-                    AccountDestitnyId = request.AccountDestitnyId,
+                    AccountOrigin = originAccount,
+                    AccountDestitny = destinyAccount,
                     Amount = request.Amount 
                 });
 

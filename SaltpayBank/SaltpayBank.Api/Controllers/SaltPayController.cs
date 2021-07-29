@@ -23,12 +23,11 @@ namespace SaltpayBank.Api.Controllers
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
 
-        public SaltPayController(IMediator mediator, IMapper mapper, ILogger<SaltPayController> logger, SampleDataHelper sampleDataHelper)
+        public SaltPayController(IMediator mediator, IMapper mapper, ILogger<SaltPayController> logger)
         {
             _mediator = mediator;
             _mapper = mapper;
             _logger = logger;
-            sampleDataHelper.Setup();
         }
 
         // - Create a new bank account for a customer, with an initial deposit amount. 

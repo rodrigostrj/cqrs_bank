@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SaltpayBank.Api.DB_DataInitializaer;
 using SaltpayBank.Infrastructure.Data;
 using Serilog;
 using Serilog.Sinks.Elasticsearch;
@@ -18,6 +19,17 @@ namespace SaltpayBank.Api
             ConfigureLogging();
 
             var host = CreateHostBuilder(args).Build();
+
+            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            if (environment.ToUpper() == "DEVELOPMENT")
+            {
+                using (var scope = host.Services.CreateScope())
+                {
+                    var dbInitializer = scope.ServiceProvider.GetRequiredService<SampleDataHelper>();
+                    dbInitializer.Setup(); ;
+                }
+            }         
+
             host.Run();
         }
 

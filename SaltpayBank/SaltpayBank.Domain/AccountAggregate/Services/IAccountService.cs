@@ -9,6 +9,6 @@ namespace SaltpayBank.Domain.AccountAggregate.Services
     public interface IAccountService
     {
         void CreateBankAccount(Account account);
-        Account GetAccount(Account customer);
+        Account GetAccount(int customerId);
     }
 }
