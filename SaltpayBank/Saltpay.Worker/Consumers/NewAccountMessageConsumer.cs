@@ -13,18 +13,16 @@ namespace Saltpay.Worker.Consumers
 {
     public class NewAccountMessageConsumer : IConsumer<NewAccountMessage>
     {
-        private IUnitOfWork _unitOfWork;
 
-        public NewAccountMessageConsumer(IUnitOfWork unitOfWork)
+        public NewAccountMessageConsumer()
         {
-            _unitOfWork = unitOfWork;
         }
 
         public async Task Consume(ConsumeContext<NewAccountMessage> context)
         {
-            var repository = _unitOfWork.AsyncRepository<Account>();
-            await repository.AddAsync(new Account { });
-            await _unitOfWork.SaveChangesAsync();
+            //var repository = _unitOfWork.AsyncRepository<Account>();
+            //await repository.AddAsync(new Account { });
+            //await _unitOfWork.SaveChangesAsync();
         }
     }
 }

@@ -12,19 +12,17 @@ namespace Saltpay.Worker.Consumers
 {
     public class NewAccountTransferMessageConsumer : IConsumer<NewAccountTransferMessage>
     {
-        private IUnitOfWork _unitOfWork;
 
-        public NewAccountTransferMessageConsumer(IUnitOfWork unitOfWork)
+        public NewAccountTransferMessageConsumer()
         {
-            _unitOfWork = unitOfWork;
         }
 
         public async Task Consume(ConsumeContext<NewAccountTransferMessage> context)
         {
-            var repository = _unitOfWork.AsyncRepository<Transfer>();
+            //var repository = _unitOfWork.AsyncRepository<Transfer>();
             //await repository.AddAsync(new Transfer { });
             // Update Account and Transfer
-            await _unitOfWork.SaveChangesAsync();
+            //await _unitOfWork.SaveChangesAsync();
         }
     }
 }

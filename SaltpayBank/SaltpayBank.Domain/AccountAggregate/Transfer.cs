@@ -17,9 +17,9 @@ namespace SaltpayBank.Domain.AccountAggregate
         public decimal OriginAccountAmountBeforeTransfer { get; set; }
         public DateTime DateTransfer { get; set; }
 
-        public Transfer()
+        public override void Validate()
         {
-
+            Validate(this, new TransferValidator());
         }
 
         public class TransferValidator : AbstractValidator<Transfer>

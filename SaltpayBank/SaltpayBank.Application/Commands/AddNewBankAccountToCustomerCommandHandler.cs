@@ -22,22 +22,17 @@ namespace SaltpayBank.Application.Commands
         private readonly IMapper _mapper;
         private readonly IEventPublisher _eventPublisher;
         private readonly NotificationContext _notificationContext;
-        private readonly IUnitOfWork _unitOfWork;
-        //private readonly IAsyncRepository<Account> _repository;
 
         public AddNewBankAccountToCustomerCommandHandler(
             IMediator mediator, 
             IMapper mapper, 
             IEventPublisher eventPublisher,
-            NotificationContext notificationContext,
-            IUnitOfWork unitOfWork)
+            NotificationContext notificationContext)
         {
             _mediator = mediator;
             _mapper = mapper;
             _eventPublisher = eventPublisher;
             _notificationContext = notificationContext;
-            _unitOfWork = unitOfWork;
-            //_repository = _unitOfWork.AsyncRepository<Account>();
         }
 
         public async Task<bool> Handle(AddNewBankAccountToCustomerCommand request, CancellationToken cancellationToken)

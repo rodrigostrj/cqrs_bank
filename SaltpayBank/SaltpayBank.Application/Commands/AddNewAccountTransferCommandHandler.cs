@@ -19,31 +19,24 @@ namespace SaltpayBank.Application.Commands
         : IRequestHandler<AddNewAccountTransferCommand, bool>
     {
         private readonly IMediator _mediator;
-        private readonly IMapper _mapper;
         private readonly IEventPublisher _eventPublisher;
         private readonly NotificationContext _notificationContext;
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IAsyncRepository<Account> _repository;
+
 
         public AddNewAccountTransferCommandHandler(
             IMediator mediator, 
-            IMapper mapper, 
             IEventPublisher eventPublisher,
-            NotificationContext notificationContext,
-            IUnitOfWork unitOfWork)
+            NotificationContext notificationContext)
         {
             _mediator = mediator;
-            _mapper = mapper;
             _eventPublisher = eventPublisher;
             _notificationContext = notificationContext;
-            _unitOfWork = unitOfWork;
-            _repository = _unitOfWork.AsyncRepository<Account>();
         }
 
         public async Task<bool> Handle(AddNewAccountTransferCommand request, CancellationToken cancellationToken)
         {
-            var originAccount = await _repository.GetAsync(x => x.Id == request.AccountOriginId);
-            var destinyAccount = await _repository.GetAsync(x => x.Id == request.AccountDestitnyId);
+            var originAccount = new Account { }; //= await _repository.GetAsync(x => x.Id == request.AccountOriginId);
+            var destinyAccount = new Account { };  //= await _repository.GetAsync(x => x.Id == request.AccountDestitnyId);
 
             var NewTransferToValidate = new Transfer
             {
@@ -53,6 +46,7 @@ namespace SaltpayBank.Application.Commands
                 AmountToTransfer = request.Amount
             };
 
+            NewTransferToValidate.Validate();
             if (NewTransferToValidate.Invalid)
             {
                 _notificationContext.AddNotifications(NewTransferToValidate.ValidationResult);

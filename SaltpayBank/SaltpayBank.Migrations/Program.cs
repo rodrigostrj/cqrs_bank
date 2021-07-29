@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SaltpayBank.Infrastructure.Data;
 using System;
@@ -31,14 +30,6 @@ namespace SaltpayBank.Migrations
 
             var configuration = config.Build();
 
-            var serviceProvider = new ServiceCollection()
-                .AddDbContext<EFContext>(options =>
-                         options.UseSqlServer(Configuration.GetConnectionString("SaltpayBankConnectionString")))
-                .BuildServiceProvider();
-
-            var context = serviceProvider.GetService<EFContext>();
-
-            context.Database.Migrate();
         }
     }
 }

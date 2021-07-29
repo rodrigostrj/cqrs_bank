@@ -21,6 +21,9 @@ using SaltpayBank.Domain.AccountAggregate.Services;
 using SaltpayBank.Seedwork.Notifications;
 using SaltpayBank.Api.Filters;
 using Microsoft.AspNetCore.Mvc;
+using SaltpayBank.Seedwork.Repository;
+using SaltpayBank.Domain.AccountAggregate.RepositoryContracts;
+using SaltpayBank.Api.DB_DataInitializaer;
 
 namespace SaltpayBank.Api
 {
@@ -36,7 +39,6 @@ namespace SaltpayBank.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
 
             // TODO: Improve DI
@@ -50,8 +52,6 @@ namespace SaltpayBank.Api
             services
                 .AddSingleton<IEventPublisher, EventPublisher>();
 
-            services
-                .AddScoped<IUnitOfWork, UnitOfWork>();
 
             // Domains Services 
             services.AddScoped<IAccountService, AccountService>();
@@ -61,10 +61,15 @@ namespace SaltpayBank.Api
             services.AddMediatR(cfg => { }, typeof(AddNewBankAccountToCustomerCommandHandler).Assembly);
             services.AddScoped<NotificationContext>();
 
-            services.AddDbContext<EFContext>(options =>
-                     options.UseSqlServer(Configuration.GetConnectionString("SaltpayBankConnectionString")));
-            services
-                .AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
+            // Sample Data 
+            services.AddScoped<SampleDataHelper>();
+
+            // Repositories
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddSingleton<DbSession>(s => new DbSession(Configuration.GetSection("ConnectionStrings:SaltpayBankConnectionString").Value));
+            services.AddScoped<IAccountRepository, AccountRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ITransferRepository, TransferRepository>();
 
             services.AddAutoMapper(typeof(ApiProfile), typeof(ApplicationProfile));
             // #############################################################

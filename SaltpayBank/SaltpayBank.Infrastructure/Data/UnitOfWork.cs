@@ -1,29 +1,33 @@
-﻿using SaltpayBank.Infrastructure.Data.Repositories;
-using SaltpayBank.Seedwork;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SaltpayBank.Seedwork.Repository;
 
 namespace SaltpayBank.Infrastructure.Data
 {
-    public class UnitOfWork : IUnitOfWork
+    public sealed class UnitOfWork : IUnitOfWork
     {
-        private readonly EFContext _dbContext;
+        private readonly DbSession _session;
 
-        public UnitOfWork(EFContext dbContext)
+        public UnitOfWork(DbSession session)
         {
-            _dbContext = dbContext;
+            _session = session;
         }
 
-        public IAsyncRepository<T> AsyncRepository<T>() where T : BaseEntity
+        public void BeginTransaction()
         {
-            return new RepositoryBase<T>(_dbContext);
+            _session.Transaction = _session.Connection.BeginTransaction();
         }
 
-        public Task<int> SaveChangesAsync()
+        public void Commit()
         {
-            return _dbContext.SaveChangesAsync();
+            _session.Transaction.Commit();
+            Dispose();
         }
+
+        public void Rollback()
+        {
+            _session.Transaction.Rollback();
+            Dispose();
+        }
+
+        public void Dispose() => _session.Transaction?.Dispose();
     }
 }

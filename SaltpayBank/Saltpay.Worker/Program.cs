@@ -4,11 +4,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Saltpay.Worker.Ioc;
+using SaltpayBank.Domain.AccountAggregate.RepositoryContracts;
 using SaltpayBank.Domain.AccountAggregate.Services;
 using SaltpayBank.Infrastructure.Data;
 using SaltpayBank.Infrastructure.Data.Repositories;
 using SaltpayBank.Infrastructure.EventBus;
 using SaltpayBank.Seedwork;
+using SaltpayBank.Seedwork.Repository;
 using Serilog;
 using System;
 using System.IO;
@@ -56,18 +58,17 @@ namespace Saltpay.Worker
             })
             .ConfigureServices((hostContext, services) =>
             {
+                // Repositories
                 services.AddScoped<IUnitOfWork, UnitOfWork>();
+                services.AddSingleton<DbSession>(s => new DbSession(Configuration.GetSection("ConnectionStrings:SaltpayBankConnectionString").Value));
+                services.AddScoped<IAccountRepository, AccountRepository>();
+                services.AddScoped<ICustomerRepository, CustomerRepository>();
+                services.AddScoped<ITransferRepository, TransferRepository>();
 
                 services.AddScoped<IAccountService, AccountService>();
                 services.AddScoped<ITransferService, TransferService>();
 
                 services.SetupBusIoc();
-
-                services
-                    .AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
-
-                services.AddDbContext<EFContext>(options =>
-                         options.UseSqlServer(Configuration.GetConnectionString("SaltpayBankConnectionString")));
 
                 services.AddHostedService<Worker>();
             })

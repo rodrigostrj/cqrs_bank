@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SaltpayBank.Api.ApiContracts.Requests;
 using SaltpayBank.Api.ApiContracts.Responses;
+using SaltpayBank.Api.DB_DataInitializaer;
 using SaltpayBank.Application.Commands;
 using SaltpayBank.Application.Queries;
 using System;
@@ -22,11 +23,12 @@ namespace SaltpayBank.Api.Controllers
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
 
-        public SaltPayController(IMediator mediator, IMapper mapper, ILogger<SaltPayController> logger)
+        public SaltPayController(IMediator mediator, IMapper mapper, ILogger<SaltPayController> logger, SampleDataHelper sampleDataHelper)
         {
             _mediator = mediator;
             _mapper = mapper;
             _logger = logger;
+            sampleDataHelper.Setup();
         }
 
         // - Create a new bank account for a customer, with an initial deposit amount. 

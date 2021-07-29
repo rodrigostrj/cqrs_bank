@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SaltpayBank.Seedwork
+namespace SaltpayBank.Seedwork.Repository
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
-        Task<int> SaveChangesAsync();
-        IAsyncRepository<T> AsyncRepository<T>() where T : BaseEntity;
+        void BeginTransaction();
+        void Commit();
+        void Rollback();
     }
 }
