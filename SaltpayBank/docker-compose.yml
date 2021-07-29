@@ -17,6 +17,18 @@ services:
         networks:
          - saltpaybank            
 
+#   saltpaybank.worker:
+#       depends_on:
+#          - db
+#       image: saltpaybank.worker
+#       build:
+#         context: .
+#         dockerfile: Saltpay.Worker/Dockerfile
+#       environment:
+#         - ASPNETCORE_ENVIRONMENT=Development
+#       networks:
+#        - saltpaybank  
+
     saltpaybank.api:
         depends_on:
            - db
