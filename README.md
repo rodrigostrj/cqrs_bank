@@ -61,3 +61,29 @@ Please organize, design, test and document your code as if it were going into pr
 All the best and happy coding,
 
 The SaltPay Team
+
+
+############################## 
+- SaltBankPay Solution
+  - The solution is divided in two main packages API and Worker
+  - The Architecture is based on CQRS
+  - running the application it is possible to see it running on swaggger with the api resources exposed
+  - the better way to do integration tests is running the docker-compose and stop the api, after that it is recomended to run the worker separately (out of docker)
+  - To de done:
+    - The Worker (Consumer of CQRS Commands) app is not working yet in docker. But it works directly on in a real machine
+    - I have no time to do more tests for Application Layer (specially handlers) and for controller
+    - improve tries and catches
+    - create exception tests for transferservice
+    - Stop exposing internal errors on api
+    - Add a limit to consumers TTL (Worker)
+    - Improve DB Transaction
+    - Improving Object Mappings 
+    - Work with DB Mapping
+  
+  
+  - 
+
+
+
+
+
