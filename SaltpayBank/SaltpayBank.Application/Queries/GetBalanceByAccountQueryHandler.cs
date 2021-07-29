@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using SaltpayBank.Application.Models;
+using SaltpayBank.Domain.AccountAggregate.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,21 @@ namespace SaltpayBank.Application.Queries
 {
     public class GetBalanceByAccountQueryHandler : IRequestHandler<GetBalanceByAccountQuery, AccountDTO>
     {
-        public GetBalanceByAccountQueryHandler()
-        {
+        private IAccountService _accountService;
 
+        public GetBalanceByAccountQueryHandler(IAccountService accountService)
+        {
+            _accountService = accountService;
         }
 
         public Task<AccountDTO> Handle(GetBalanceByAccountQuery request, CancellationToken cancellationToken)
         {
-            return null;
+            var account = _accountService.GetAccount(request.AccountId);
+            return Task.Factory.StartNew(
+                () => new AccountDTO {
+                    Amount = account.Amount,
+                    Id = account.Id
+                });
         }
     }
 }

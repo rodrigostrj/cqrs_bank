@@ -10,22 +10,18 @@ namespace Saltpay.Worker.Consumers
     public class NewAccountMessageConsumer : IConsumer<NewAccountMessage>
     {
         private IAccountService _accountService;
-        private ICustomerRepository _customerRepository;
 
         public NewAccountMessageConsumer(
-            IAccountService accountService,
-            ICustomerRepository customerRepository)
+            IAccountService accountService)
         {
             _accountService = accountService;
-            _customerRepository = customerRepository;
         }
 
         public async Task Consume(ConsumeContext<NewAccountMessage> context)
         {
-            var customer = _customerRepository.Get(context.Message.Customer.Id);
             var account = new Account
             {
-                Customer = customer,
+                Customer = context.Message.Customer,
                 Amount = context.Message.Amount
             };
 

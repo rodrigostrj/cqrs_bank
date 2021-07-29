@@ -21,11 +21,22 @@ namespace SaltpayBank.Infrastructure.Data.Repositories
         public Account Get(int accountId)
         {
             var result = _session.Connection.Query(
-                $"SELECT a.Id, a.Amount, c.Name as CustomerName FROM [Accounts] a " +
-                $"Inner Join Customers c on a.CustomerId = c.Id" +
+                $"SELECT Id as Id, Amount as Amount, Customer_Id as Customer_Id  FROM [Accounts] " +
                 $"Where Id = '{accountId}'", null, _session.Transaction).FirstOrDefault();
 
-            return result;
+            var resultCustomer = _session.Connection.Query(
+                $"SELECT Id as Id, Name as Name FROM [Customers] " +
+                $"Where Id = '{result.Customer_Id}'", null, _session.Transaction).FirstOrDefault();
+
+            return new Account {
+                Id = result.Id,
+                Amount = result.Amount,
+                Customer = new Customer
+                {
+                    Id = resultCustomer.Id,
+                    Name = resultCustomer.Name
+                }
+            };
         }
 
         public void Save(Account account)
@@ -33,12 +44,12 @@ namespace SaltpayBank.Infrastructure.Data.Repositories
             if (account.Id == 0)
             {
                 _session.Connection.Execute(
-                    $"INSERT INTO [Accounts] (CustomerId, Amount) VALUES('{account.Customer.Id}', '{account.Amount}')", null, _session.Transaction);
+                    $"INSERT INTO [Accounts] (Customer_Id, Amount) VALUES('{account.Customer.Id}', '{account.Amount}')", null, _session.Transaction);
                 return;
             }
 
             _session.Connection.Execute(
-                    $"Update [Accounts] set Amount = '{account.Amount}')" +
+                    $"Update [Accounts] set Amount = '{account.Amount}' " +
                     $"WHERE Id = '{account.Id}'", null, _session.Transaction);
         }
     }

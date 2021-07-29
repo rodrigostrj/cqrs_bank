@@ -96,12 +96,25 @@ namespace SaltpayBank.Api.Controllers
             {
                 var command = new GetTransferListByAccountQuery(accountId);
                 var response = await _mediator.Send(command);
-                var transferList = _mapper.Map<List<Transfer>>(response);
+                //var transferList = _mapper.Map<List<Transfer>>(response);
+                var transferList = new List<Transfer>();
+                foreach (var item in response)
+                {
+                    transferList.Add(
+                        new Transfer {
+                            Amount = item.TransferAmount,
+                            AmountBeforeTransfer = item.AmountBeforeTransfer,
+                            DateTransfer = item.TransferDate
+                        }
+                        );
+                }
+
+
                 return Ok(transferList);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error the balance by account");
+                _logger.LogError(ex, "Error the transfer history by account");
                 throw;
             }
         }

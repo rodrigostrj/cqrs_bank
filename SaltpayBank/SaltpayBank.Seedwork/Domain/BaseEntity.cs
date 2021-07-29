@@ -11,7 +11,6 @@ namespace SaltpayBank.Seedwork
         private List<IDomainEvent> _events;
         int _Id;
         int? _requestedHashCode;
-        public IReadOnlyList<IDomainEvent> Events => _events.AsReadOnly();
         public virtual int Id
         {
             get

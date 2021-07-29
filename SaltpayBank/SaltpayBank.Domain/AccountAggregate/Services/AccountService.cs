@@ -23,14 +23,12 @@ namespace SaltpayBank.Domain.AccountAggregate.Services
 
         public void CreateBankAccount(Account account)
         {
-            _unitiOfWork.BeginTransaction();
             _accountRepository.Save(account);
-            _unitiOfWork.Commit();
         }
 
-        public Account GetAccount(int customerId)
+        public Account GetAccount(int accountId)
         {
-            return _accountRepository.Get(customerId);
+            return _accountRepository.Get(accountId);
         }
     }
 }

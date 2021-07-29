@@ -42,13 +42,9 @@ namespace SaltpayBank.Domain.AccountAggregate.Services
                 return;
             }
 
-            _unitOfWork.BeginTransaction();
-
             _accountRepository.Save(accountOrigin);
             _accountRepository.Save(accountDestiny);
             _transferRepository.Save(transfer);
-
-            _unitOfWork.Commit();
         }
 
         public IEnumerable<Transfer> GetTransfers(int accountId)

@@ -7,5 +7,8 @@ namespace SaltpayBank.Api.ApiContracts.Responses
 {
     public class Transfer
     {
+        public decimal Amount { get; set; }
+        public decimal AmountBeforeTransfer { get; set; }
+        public DateTime DateTransfer { get; set; }
     }
 }

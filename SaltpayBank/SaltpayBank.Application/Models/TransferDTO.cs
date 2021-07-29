@@ -8,5 +8,8 @@ namespace SaltpayBank.Application.Models
 {
     public class TransferDTO
     {
+        public DateTime TransferDate { get; set; }
+        public decimal TransferAmount { get; set; }
+        public decimal AmountBeforeTransfer { get; set; }
     }
 }
